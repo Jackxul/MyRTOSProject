@@ -35,7 +35,7 @@ void vTask2(void *pvParameters){
         fflush(stdout);
         taskBcounter++;
         vTaskDelayUntil(&LastWakeTime, Freqiency);
-        if(taskBcounter == 3){
+        if(taskBcounter == 29){
             printf("Task B deleted itself.\n");
             vTaskDelete(NULL); // Delete itself after executing 3 times
                                     //

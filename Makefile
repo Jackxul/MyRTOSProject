@@ -6,14 +6,14 @@ FREERTOS_DIR_REL := ../../../FreeRTOS
 FREERTOS_DIR     := $(abspath $(FREERTOS_DIR_REL))
 KERNEL_DIR       := ${FREERTOS_DIR}/Source
 
-file ?= main
+file ?= main.c
 
 INCLUDE_DIRS  := -I.
 INCLUDE_DIRS  += -I${KERNEL_DIR}/include
 INCLUDE_DIRS  += -I${KERNEL_DIR}/portable/ThirdParty/GCC/Posix
 INCLUDE_DIRS  += -I${KERNEL_DIR}/portable/ThirdParty/GCC/Posix/utils
 
-SOURCE_FILES  := $(file).c
+SOURCE_FILES  := $(file)
 SOURCE_FILES  += $(wildcard ${FREERTOS_DIR}/Source/*.c)
 SOURCE_FILES  += ${KERNEL_DIR}/portable/MemMang/heap_3.c
 SOURCE_FILES  += ${KERNEL_DIR}/portable/ThirdParty/GCC/Posix/utils/wait_for_event.c
